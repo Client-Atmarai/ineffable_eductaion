@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centre Table</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .table-container {
+      overflow-x: auto;
+    }
+    
+  </style>
+</head>
+
+<body class="bg-black-100" style="background-color: black;">
+  <div class="container mx-auto py-8">
+    <div class="table-container">
+      <table class="min-w-full bg-black" style="background-color: black;color:whitesmoke;border:1px solid white">
+        <thead>
+          <tr style="background-color: grey;color:white;">
+            <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">
+              Username
+            </th>
+            <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">
+              Email
+            </th>
+            <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-gray-600 border-b border-gray-400">
+              Name
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for u in user %}
+           <tr>
+            <td class="py-4 px-6 border-b border-gray-800" style="text-align: center;">
+    {{u.username}}          
+            </td>
+            <td class="py-4 px-6 border-b border-gray-800" style="text-align: center;">
+{{u.email}}
+            </td>
+            <td class="py-4 px-6 border-b border-gray-800" style="text-align: center;">
+              {{u.first_name}}{{u.last_name}}
+            </td>
+        </tr>
+        {% endfor %} 
+
+        <!-- <tr>
+            <td class="py-4 px-6 border-b border-gray-400">
+              Jane Smith
+            </td>
+            <td class="py-4 px-6 border-b border-gray-400">
+              jane@example.com
+            </td>
+            <td class="py-4 px-6 border-b border-gray-400">
+              User
+            </td>
+          </tr>
+          -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.tailwindcss.com/2.2.16/tailwind.min.js"></script>
+</body>
+
+</html>
